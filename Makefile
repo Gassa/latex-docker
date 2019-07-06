@@ -15,4 +15,7 @@ build_basic: Dockerfile.basic
 build_full: build_basic Dockerfile.full
 	@docker build -f Dockerfile.full -t $(IMAGE):ctanfull .
 
+build_makefile: build_basic Dockerfile.make
+	@docker build -f Dockerfile.make -t $(IMAGE):make .
+
 default: build

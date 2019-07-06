@@ -50,6 +50,11 @@ edit ./latexdockercmd.sh
 
 # Or make multiple passes (does not start container twice)
 ../latexdockercmd.sh /bin/sh -c "pdflatex main.tex && pdflatex main.tex"
+
+# Or compile with Makefile
+docker run --rm -it --net=none -v "$PWD":/data blang/latex:make /bin/bash
+cd /data
+make
 ```
 
 Requirements
